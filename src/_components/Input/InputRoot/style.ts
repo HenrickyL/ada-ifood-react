@@ -10,6 +10,6 @@ export const InputRootSty = styled.div`
     svg{
         color: ${prop=>prop.theme.contrast};
         background-color: transparent;
-        font-size: ${prop => prop.theme.iconSize};
+        font-size: ${prop => `${prop.theme.iconSize}px`};
     }
 `

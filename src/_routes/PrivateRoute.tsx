@@ -15,5 +15,5 @@ export const PrivateRoute = ({children}:{children: React.ReactNode})=>{
             message:"You need credentials"
         })
     }, [])
-    return user? children : <Navigate to="/signin" />
+    return user? children : <Navigate to="/login" />
 }

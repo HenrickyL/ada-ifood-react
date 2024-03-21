@@ -3,27 +3,11 @@ import { PrivateRoute } from "./PrivateRoute";
 import { Login } from "../_pages/Login";
 import { Home } from "../_pages/Home";
 import { Signin } from "../_pages/Signin";
-import { Link } from "react-router-dom";
 import { NotFound } from "../_pages/NotFound";
+import { ProductList } from "../_pages/ProductList";
+import { ProductDetails } from "../_pages/ProductDetails";
+import { Cart } from "../_pages/Cart";
 
-
-const Routers = ()=>{
-    function GetName(path: string | undefined): string{
-        return path == '*' ? 'Not-found' : (path || '/')   }
-    return(
-        <div style={{display:'flex', flexDirection:'column', padding:'4px'}}>
-        {routes.routes.map(route => route.children ?
-            <>
-                <span>{GetName(route.path)}</span>
-                {route.children.map(r=>
-                    <span>. . . . .  <Link to={r.path || '/'}>{GetName(r.path)}</Link></span>
-                )}
-            </> 
-            :<Link to={route.path || '/'}>{GetName(route.path)}</Link>    
-            )}
-        </div>
-    )
-}
 
 
 export const routes = createBrowserRouter([
@@ -31,8 +15,17 @@ export const routes = createBrowserRouter([
         path: '/',
         element: <Home />,
         children: [
-            {path: '/', element: <Routers />},
-            {path: 'test', element: <h1>Home Test</h1> },
+            {
+                path: 'products',
+                element:<ProductList />,
+                children: [
+                    {path: ':productId', element: <ProductDetails />},
+                ]
+            },
+            {
+                path: 'cart',
+                element: <PrivateRoute children={<Cart />} />
+            },
             {path: '/*', element: <NotFound />}
         ]
     },
@@ -59,7 +52,6 @@ export const routes = createBrowserRouter([
     {
         path: '*',
         element: <NotFound />
-           
     },
 
 ])

@@ -105,7 +105,8 @@ interface ThemeNotificationFields{
 // Tema Light
 export const lightTheme: Theme = {
   text: "#000000",
-  contrast: "#FFFFFF",
+  contrast: "#0c0c0c",
+  contrastLight: '#888',
   settings: {
     normalTransition: 0.3,
     iconSize: 24,
@@ -113,19 +114,23 @@ export const lightTheme: Theme = {
   input: {
     background: "#F0F0F0",
   },
-  notification: {
+  notification:{
     success: {
-      default: "#4CAF50",
+      default: '#2ecc71',
+      background: '#F0FFF0' 
     },
     warning: {
-      default: "#FF9800",
+        default: '#f39c12',
+        background: '#fffff0' 
     },
     error: {
-      default: "#F44336",
+        default: '#e74c3c',
+        background: '#fff0f0' 
     },
     report: {
-      default: "#2196F3",
-    },
+        default: '#3498db',
+        background: '#f0f0ff'
+    }
   },
   background: "#FFFFFF",
   backgroundSnd: "#F0F0F0",
@@ -144,7 +149,8 @@ export const lightTheme: Theme = {
 // Tema Dark
 export const darkTheme: Theme = {
   text: "#FFFFFF",
-  contrast: "#000000",
+  contrast: "#fcfcfc",
+  contrastLight: "#6a6a6a",
   settings: {
     normalTransition: 0.3,
     iconSize: 24,
@@ -155,19 +161,19 @@ export const darkTheme: Theme = {
   notification: {
     success: {
       default: "#81C784",
-      background: "#2E7D32",
+      background: "#ceffd0",
     },
     warning: {
       default: "#FFB74D",
-      background: "#FF6D00",
+      background: "#ffe6c1",
     },
     error: {
       default: "#E57373",
-      background: "#C62828",
+      background: "#ffc5c5",
     },
     report: {
       default: "#64B5F6",
-      background: "#1565C0",
+      background: "#c4c4ff",
     },
   },
   background: "#424242",
