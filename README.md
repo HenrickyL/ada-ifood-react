@@ -12,3 +12,9 @@ O ecomm deverá ter:
 -   1 tela de carrinho de compra onde não poderá finalizar a compra antes de fazer o login.
 
 CSS não é o nosso foco, mas faça uma estilização básica.
+
+
+
+----------------
+
+[Base Project](https://github.com/HenrickyL/react-base-project)
