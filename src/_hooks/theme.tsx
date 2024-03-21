@@ -70,6 +70,7 @@ interface ThemeNotificationFields{
   
   interface ThemeInputsSettings{
     background: string,
+    hover: string
   }
   
   export interface Theme {
@@ -112,29 +113,30 @@ export const lightTheme: Theme = {
     iconSize: 24,
   },
   input: {
-    background: "#F0FcF0",
+    background: "#F0F0F0",
+    hover: "#FcFdFc"
   },
   notification:{
     success: {
-      default: '#2ecc71',
+      default: '#28be8e',
       background: '#F0FFF0' 
     },
     warning: {
-        default: '#f39c12',
+        default: '#ffe100',
         background: '#fffff0' 
     },
     error: {
-        default: '#e74c3c',
+        default: '#ff0000',
         background: '#fff0f0' 
     },
     report: {
-        default: '#3498db',
+        default: '#0089ff',
         background: '#f0f0ff'
     }
   },
-  background: "#dcdbc6",
-  backgroundSnd: "#86a37a",
-  backgroundTer: "#C8C8C8",
+  background: "#e8f4ea",
+  backgroundSnd: "#b8d8be",
+  backgroundTer: "#d2e7d6",
   black: "#000000",
   black2: "#333333",
   black3: "#666666",
@@ -157,6 +159,7 @@ export const darkTheme: Theme = {
   },
   input: {
     background: "#333333",
+    hover: '#444'
   },
   notification: {
     success: {

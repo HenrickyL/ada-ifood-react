@@ -26,7 +26,7 @@ export const InputFieldSty = styled.div<InputFieldStyProps>`
 
     &:hover{
         background-color: ${prop=> 
-            prop.theme.background};
+            prop.theme.input.hover};
         border: 2px solid ${prop=> prop.theme.contrastLight};
 
     }
