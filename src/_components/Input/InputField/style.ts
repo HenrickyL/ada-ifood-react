@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { InputLabelSty } from "../Input.Label/style";
 
 interface InputFieldStyProps{
@@ -27,11 +27,13 @@ export const InputFieldSty = styled.div<InputFieldStyProps>`
     &:hover{
         background-color: ${prop=> 
             prop.theme.background};
+        border: 2px solid ${prop=> prop.theme.contrastLight};
+
     }
 
     &:focus-within{
         background-color: ${prop=> 
-            prop.theme.background};
+            prop.theme.white};
         border: 2px solid ${prop=> prop.theme.contrast};
         ${InputLabelSty}{
             position:absolute;

@@ -12,7 +12,7 @@ const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData);
 
 
 export const ThemeProvider = ({children}:{children:React.ReactNode})=>{
-    const [theme, setTheme] = useState<Theme>(darkTheme)
+    const [theme, setTheme] = useState<Theme>(lightTheme)
 
     function toggle():void{
         changeToTheme(theme === lightTheme? 'dark' : 'light' )
