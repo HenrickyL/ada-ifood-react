@@ -12,7 +12,7 @@ const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData);
 
 
 export const ThemeProvider = ({children}:{children:React.ReactNode})=>{
-    const [theme, setTheme] = useState<Theme>(lightTheme)
+    const [theme, setTheme] = useState<Theme>(darkTheme)
 
     function toggle():void{
         changeToTheme(theme === lightTheme? 'dark' : 'light' )
@@ -112,7 +112,7 @@ export const lightTheme: Theme = {
     iconSize: 24,
   },
   input: {
-    background: "#F0F0F0",
+    background: "#F0FcF0",
   },
   notification:{
     success: {
@@ -132,8 +132,8 @@ export const lightTheme: Theme = {
         background: '#f0f0ff'
     }
   },
-  background: "#FFFFFF",
-  backgroundSnd: "#F0F0F0",
+  background: "#dcdbc6",
+  backgroundSnd: "#86a37a",
   backgroundTer: "#C8C8C8",
   black: "#000000",
   black2: "#333333",
@@ -160,24 +160,24 @@ export const darkTheme: Theme = {
   },
   notification: {
     success: {
-      default: "#81C784",
-      background: "#ceffd0",
+      default: "#ceffd0",
+      background: "#81C784",
     },
     warning: {
-      default: "#FFB74D",
-      background: "#ffe6c1",
+      default: "#ffe6c1",
+      background: "#FFB74D",
     },
     error: {
-      default: "#E57373",
-      background: "#ffc5c5",
+      default: "#ffc5c5",
+      background: "#E57373",
     },
     report: {
-      default: "#64B5F6",
-      background: "#c4c4ff",
+      default: "#adbdf7",
+      background: "#64B5F6",
     },
   },
-  background: "#424242",
-  backgroundSnd: "#616161",
+  background: "#252b25",
+  backgroundSnd: "#6c7c6c",
   backgroundTer: "#757575",
   black: "#FFFFFF",
   black2: "#F0F0F0",
