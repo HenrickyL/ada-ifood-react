@@ -102,95 +102,88 @@ interface ThemeNotificationFields{
     tertiaryLight?: string;
   }
   
-  export const lightTheme: Theme = {
-    contrast: '#000',
-    contrastLight: '#888',
-    text: '#000',
-    background: '#fff',
-    backgroundSnd: '#dff0df',
-    backgroundTer: '#F6B756ff',
-    black: '#000',
-    black2: '#3a3a3a',
-    black3: '#5a5a5a',
-    white: '#FEFFFE',
-    white2: '#F0F0F0',
-    white3: '#EFEFEF',
-    gray: '#6C6C6D',
-    primary: '#0f0',
-    primaryLight: '#29fd53',
-    secondary: '#926386ff',
-    secondaryLight: '#936625ff',
-    tertiary: '#FB8C50ff',
-  
-    input: {
-      background: "#f0f0f0",
+// Tema Light
+export const lightTheme: Theme = {
+  text: "#000000",
+  contrast: "#FFFFFF",
+  settings: {
+    normalTransition: 0.3,
+    iconSize: 24,
+  },
+  input: {
+    background: "#F0F0F0",
+  },
+  notification: {
+    success: {
+      default: "#4CAF50",
     },
-    settings:{
-      normalTransition: 400,
-      iconSize: 20
+    warning: {
+      default: "#FF9800",
     },
-    notification:{
-      success: {
-        default: '#2ecc71',
-        background: '#F0FFF0' 
-      },
-      warning: {
-          default: '#f39c12',
-          background: '#fffff0' 
-      },
-      error: {
-          default: '#e74c3c',
-          background: '#fff0f0' 
-      },
-      report: {
-          default: '#3498db',
-          background: '#f0f0ff'
-      }
-    }
-  };
-  
-  export const darkTheme: Theme = {
-    text: '#fff',
-    contrast: '#fff',
-    contrastLight: '#777',
-    background: '#25252b',
-    backgroundSnd: '#2a2d39',
-    backgroundTer: '#666',
-    black: '#000',
-    black2: '#3a3a3a',
-    black3: '#5a5a5a',
-    white: '#FFF',
-    white2: '#F0F0F0',
-    white3: '#EFEFEF',
-    gray: '#888',
-    primary: '#0f0',
-    primaryLight: '#3f3',
-    secondary: '#5bc0de',
-    secondaryLight: '#5bc0de',
-    tertiary: '#5bc0de',
-  
-    settings:{
-      normalTransition: 400,
-      iconSize: 20
+    error: {
+      default: "#F44336",
     },
-    input:{
-      background: '#4a5a4a'
+    report: {
+      default: "#2196F3",
     },
-    notification:{
-      success: {
-        default: '#2ecc71',
-      },
-      warning: {
-          default: '#f39c12',
-      },
-      error: {
-          default: '#e74c3c',
-      },
-      report: {
-          default: '#3498db',
-      }
-    }
-  };
+  },
+  background: "#FFFFFF",
+  backgroundSnd: "#F0F0F0",
+  backgroundTer: "#C8C8C8",
+  black: "#000000",
+  black2: "#333333",
+  black3: "#666666",
+  white: "#FFFFFF",
+  white2: "#F0F0F0",
+  white3: "#C8C8C8",
+  gray: "#9E9E9E",
+  primary: "#4CAF50",
+  secondary: "#8BC34A",
+};
+
+// Tema Dark
+export const darkTheme: Theme = {
+  text: "#FFFFFF",
+  contrast: "#000000",
+  settings: {
+    normalTransition: 0.3,
+    iconSize: 24,
+  },
+  input: {
+    background: "#333333",
+  },
+  notification: {
+    success: {
+      default: "#81C784",
+      background: "#2E7D32",
+    },
+    warning: {
+      default: "#FFB74D",
+      background: "#FF6D00",
+    },
+    error: {
+      default: "#E57373",
+      background: "#C62828",
+    },
+    report: {
+      default: "#64B5F6",
+      background: "#1565C0",
+    },
+  },
+  background: "#424242",
+  backgroundSnd: "#616161",
+  backgroundTer: "#757575",
+  black: "#FFFFFF",
+  black2: "#F0F0F0",
+  black3: "#C8C8C8",
+  white: "#000000",
+  white2: "#333333",
+  white3: "#666666",
+  gray: "#9E9E9E",
+  primary: "#81C784",
+  secondary: "#AED581",
+};
+
   
 export const notificationColors = {
   success: (props: any) => props.theme.notification.success,
