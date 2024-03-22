@@ -11,6 +11,8 @@ import { useNotificationStore } from "../../_stores/notification";
 import { FaExclamationCircle as ErrorIcon } from 'react-icons/fa';
 import { useAppStateStore } from "../../_stores/applicationState";
 import { FaCheckCircle as SuccessIcon } from 'react-icons/fa';
+import { Icon } from "../../_components/Icon";
+import { FaAngleLeft  as BackIcon } from "react-icons/fa";
 
 interface SigninFormEntry{
     username: string;
@@ -58,9 +60,16 @@ export const Signin = ()=>{
            setLoading(false)
         }
     });
+    const navigation = useNavigate()
+
 
     return(
         <SigninSty>
+            <div className="backIcon" onClick={()=>{
+                navigation('/')
+            }}>
+                <Icon icon={BackIcon} size={36}/>
+            </div>
             <main>
                 <Form.Root form={form}>
                     <Form.Title text="Signin"/>

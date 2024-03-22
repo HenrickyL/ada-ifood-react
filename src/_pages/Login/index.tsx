@@ -9,6 +9,8 @@ import { useAuth } from "../../_hooks/auth";
 import { useNotificationStore } from "../../_stores/notification";
 import { FaExclamationCircle as ErrorIcon} from "react-icons/fa";
 import { useAppStateStore } from "../../_stores/applicationState";
+import { Icon } from "../../_components/Icon";
+import { FaAngleLeft  as BackIcon } from "react-icons/fa";
 
 interface LoginFormEntry{
     email: string;
@@ -49,8 +51,15 @@ export const Login = ()=>{
         }
     });
 
+    const navigation = useNavigate()
+
     return(
         <LoginSty>
+            <div className="backIcon" onClick={()=>{
+                navigation('/')
+            }}>
+                <Icon icon={BackIcon} size={36}/>
+            </div>
             <main>
                 <Form.Root form={form}>
                     <Form.Title text="Login"/>
