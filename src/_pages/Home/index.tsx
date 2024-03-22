@@ -18,6 +18,6 @@ export const Home = ()=>{
             <Outlet />
         </div>
         :
-        <h1>Welcome, {user.name}</h1>
+        <h1>Welcome, {user.username}</h1>
     )
 }

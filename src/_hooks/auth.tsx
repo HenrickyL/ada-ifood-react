@@ -1,10 +1,8 @@
 import { createContext, useContext, useMemo, useState } from "react";
 import { IUser } from "../_interfaces/user";
-import { client} from '../_network/api'
 import { StorageKeys, StorageMiddleware } from "../_middlewares/StorageMiddleware";
-import { AuthLoginCredentials, AuthSignInCredentials, list } from "../_network/api/users";
+import { AuthLoginCredentials, AuthSignInCredentials, create, list } from "../_network/api/users";
 import { PaginationResponse } from "../_interfaces/pagination";
-
 
 
 interface AuthContextData {
@@ -30,19 +28,19 @@ export const AuthProvider = ( {children}:{ children: React.ReactNode})=>{
         if (Array.isArray(data)) {
             data = response as IUser[]
         } else {
-        const paginationData = response as PaginationResponse<IUser>
-        data = paginationData.data  
+            const paginationData = response as PaginationResponse<IUser>
+            data = paginationData.data  
         }
-        const onValidation = data.some(user => user.password === password && user.email.toLocaleLowerCase() == email.toLocaleLowerCase())
-        if (data.length == 0 || !onValidation) {
+        const currentUser = data.find(user => user.password === password && user.email.toLocaleLowerCase() == email.toLocaleLowerCase())
+        if (data.length == 0 || !currentUser) {
             throw new Error('Invalid credentials!');
         }
-        const currentUser = data[0]
+        console.log(currentUser)
         StorageMiddleware.setContent<IUser>(StorageKeys.USER, currentUser)
         setUser(currentUser);
     }
     async function signIn(data: AuthSignInCredentials){
-
+        await create(data)
     }
 
     // memoize

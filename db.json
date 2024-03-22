@@ -1,72 +1,84 @@
 {
-    "users": [
-      {
-        "id": "7b8d15c3-10a4-4e68-b485-3f4c054f5aee",
-        "name": "Alice Johnson",
-        "email": "alice.johnson@example.com",
-        "password": "123456"
-      },
-      {
-        "id": "3f2f0e18-9f79-4a20-88a7-1d63a0e62bb4",
-        "name": "Bob Smith",
-        "email": "bob.smith@example.com",
-        "password": "123456"
-      },
-      {
-        "id": "6fbd2a9a-cba4-4c1f-87a2-ffab5829bea9",
-        "name": "Charlie Brown",
-        "email": "charlie.brown@example.com",
-        "password": "123456"
-      }
-    ],
-    "products": [
+  "users": [
+    {
+      "id": "7b8d15c3-10a4-4e68-b485-3f4c054f5aee",
+      "username": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "password": "123456"
+    },
+    {
+      "id": "3f2f0e18-9f79-4a20-88a7-1d63a0e62bb4",
+      "username": "Bob Smith",
+      "email": "bob.smith@example.com",
+      "password": "123456"
+    },
+    {
+      "id": "6fbd2a9a-cba4-4c1f-87a2-ffab5829bea9",
+      "username": "Charlie Brown",
+      "email": "charlie.brown@example.com",
+      "password": "123456"
+    },
+    {
+      "id": "d654dd68-a234-466b-b3a4-792fb58ce6b9",
+      "email": "Henrickyl1@gmail.com",
+      "username": "",
+      "password": "123456"
+    },
+    {
+      "id": "f807e237-ae33-4e91-a976-915124c6a38b",
+      "email": "Henricky@gmail.com",
+      "username": "Henricky",
+      "password": "123456"
+    }
+  ],
+  "products": [
+    {
+      "id": "596c3f80-34d3-4e50-8be1-f30635a7c94c",
+      "name": "Camiseta Sustentável",
+      "description": "Feita 100% de algodão orgânico",
+      "price": 49.99,
+      "image": "URL da imagem",
+      "category": "Roupas",
+      "stock": 100,
+      "rating": 4.5,
+      "reviews": [
         {
-          "id": "596c3f80-34d3-4e50-8be1-f30635a7c94c",
-          "name": "Camiseta Sustentável",
-          "description": "Feita 100% de algodão orgânico",
-          "price": 49.99,
-          "image": "URL da imagem",
-          "category": "Roupas",
-          "stock": 100,
-          "rating": 4.5,
-          "reviews": [
-            {
-                "id": "7b8d15c3-10a4-4e68-b485-3f4c054f5aee",
-                "name": "Alice Johnson",
-              "comment": "Adorei a qualidade do produto!",
-              "rating": 5
-            },
-            {
-                "id": "6fbd2a9a-cba4-4c1f-87a2-ffab5829bea9",
-                "name": "Charlie Brown",
-              "comment": "Entrega rápida e produto excelente.",
-              "rating": 4
-            }
-          ]
+          "id": "7b8d15c3-10a4-4e68-b485-3f4c054f5aee",
+          "username": "Alice Johnson",
+          "comment": "Adorei a qualidade do produto!",
+          "rating": 5
         },
         {
-          "id": "4490a7b7-b51d-48ba-8120-32d15b67583b",
-          "name": "Calça de Material Reciclado",
-          "description": "Confortável e feita de materiais reciclados",
-          "price": 89.99,
-          "image": "URL da imagem",
-          "category": "Roupas",
-          "stock": 80,
-          "rating": 4.7,
-          "reviews": [
-            {
-              "id": "3f2f0e18-9f79-4a20-88a7-1d63a0e62bb4",
-              "name": "Bob Smith",
-              "comment": "Muito confortável e estilosa!",
-              "rating": 5
-            },
-            {
-                "id": "6fbd2a9a-cba4-4c1f-87a2-ffab5829bea9",
-                "name": "Charlie Brown",
-              "comment": "Adorei a iniciativa sustentável.",
-              "rating": 5
-            }
-          ]
+          "id": "6fbd2a9a-cba4-4c1f-87a2-ffab5829bea9",
+          "username": "Charlie Brown",
+          "comment": "Entrega rápida e produto excelente.",
+          "rating": 4
         }
       ]
-  }
+    },
+    {
+      "id": "4490a7b7-b51d-48ba-8120-32d15b67583b",
+      "name": "Calça de Material Reciclado",
+      "description": "Confortável e feita de materiais reciclados",
+      "price": 89.99,
+      "image": "URL da imagem",
+      "category": "Roupas",
+      "stock": 80,
+      "rating": 4.7,
+      "reviews": [
+        {
+          "id": "3f2f0e18-9f79-4a20-88a7-1d63a0e62bb4",
+          "username": "Bob Smith",
+          "comment": "Muito confortável e estilosa!",
+          "rating": 5
+        },
+        {
+          "id": "6fbd2a9a-cba4-4c1f-87a2-ffab5829bea9",
+          "username": "Charlie Brown",
+          "comment": "Adorei a iniciativa sustentável.",
+          "rating": 5
+        }
+      ]
+    }
+  ]
+}

@@ -7,7 +7,8 @@ import { Form } from "../../_components/Form";
 import { Input } from "../../_components/Input";
 import { IoMdMail as MailIcon } from "react-icons/io";
 import { FaUser as UsernameIcon } from "react-icons/fa";
-
+import { useNotificationStore } from "../../_stores/notification";
+import { FaExclamationCircle as ErrorIcon } from 'react-icons/fa';
 
 
 interface SigninFormEntry{
@@ -26,6 +27,7 @@ const validationSchema = Yup.object().shape({
 export const Signin = ()=>{
     const navigate = useNavigate();
     const {signIn} = useAuth()
+    const {addNotification} = useNotificationStore()
 
     const form = useFormik<SigninFormEntry>({
         initialValues: {
@@ -34,12 +36,16 @@ export const Signin = ()=>{
             password: ''
         },
         validationSchema,
-        onSubmit: async (value, {setFieldError}) => {
+        onSubmit: async (value) => {
            try {
             await signIn(value)
             navigate('/login');
            } catch (ex) {
-                setFieldError('password', 'Usuário inválido');
+                addNotification({
+                    message: `Erro ao cadastrar. ${ex}.`,
+                    type: 'error',
+                    icon: ErrorIcon
+                })
            }
         }
     });

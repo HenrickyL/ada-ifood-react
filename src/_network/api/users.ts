@@ -4,7 +4,7 @@ import {
 } from '../../_interfaces/pagination';
 import { IUser } from '../../_interfaces/user';
 import { client } from '../api';
-
+import {v4 as uuid} from 'uuid'
 export interface AuthLoginCredentials {
     email: string;
     password: string;
@@ -42,7 +42,16 @@ export async function findByEmail(email: string): Promise<IUser[]> {
     return data;
 }
 
-export async function create(user: IUser): Promise<void> {
+export async function create(data: AuthSignInCredentials): Promise<void> {
+    const user: IUser = {
+        id: uuid(),
+        email: data.email,
+        username: data.username,
+        password: data.password
+    }
+    const users = await list() as IUser[]
+    if(users.some(x=>x.email.toLocaleLowerCase() ===data.email.toLocaleLowerCase()))
+        throw new Error('Usuário já cadastrado')
     await client.post(`${path}`, user);
 }
 
