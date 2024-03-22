@@ -27,6 +27,6 @@ export const ProductDetailsSty = styled.div`
     img{
         border-radius: 8px;
         border: 1px solid ${prop=>prop.theme.contrast};
-        width: 30rem;
+        width: 28rem;
     }
 `

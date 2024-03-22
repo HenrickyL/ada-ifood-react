@@ -33,7 +33,7 @@ export const ProductCardCart = styled.div`
     color: ${prop=>prop.theme.contrast};
     font-size: 20px;
     bottom: 4px;
-    left: 0px;
+    left: 4px;
     transition: 0.5s;
     cursor: pointer;
     width: min-content;
@@ -53,10 +53,8 @@ export const ProductCardRating = styled.span`
         filter: drop-shadow(0 0 0.2rem black); 
     }
 `
-
-export const ProductCardSty = styled(Link)`
+export const ProductCardContainer = styled(Link)`
     font-weight: bold;
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -85,4 +83,8 @@ export const ProductCardSty = styled(Link)`
         padding: 8px;
         height: 100%;
     }
+`
+export const ProductCardSty = styled.div`
+    position: relative;
+    
 `

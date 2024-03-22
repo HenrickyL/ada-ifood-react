@@ -6,7 +6,6 @@ import { IoIosAlert as AlertIcon } from "react-icons/io";
 import { ProductDetailsSty, ProductDetailsStyContainer} from "./style";
 import { ProductCardField, ProductCardFieldInfo, ProductCardInterest, ProductCardOldPrice, ProductCardPrice, ProductCardTitle } from "../../_components/ProductCard/style";
 import { getStringToNumber } from "../../_middlewares/NumberMiddleware";
-import { useEffect } from "react";
 
 export const ProductDetails = ()=>{
     const { productId } = useParams();
@@ -38,7 +37,7 @@ export const ProductDetails = ()=>{
                         {product?.discount ? 
                             <ProductCardField>
                                 <ProductCardOldPrice>R$ {product?.price}</ProductCardOldPrice>
-                                <ProductCardPrice>R$ {getStringToNumber(product?.price*(1-product?.discount))}</ProductCardPrice>
+                                <ProductCardPrice>R$ {getStringToNumber(product.price*(1-product.discount))}</ProductCardPrice>
                             </ProductCardField>: 
                             <ProductCardPrice>R$ {product?.price}</ProductCardPrice>
                         }
