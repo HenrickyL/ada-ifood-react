@@ -7,5 +7,7 @@ export const HeaderRootSty = styled.div`
     justify-content: space-between;
     width: 100%;
     background-color: ${prop=>prop.theme.backgroundSnd};
-    padding: 8px;
+    padding: 4px 8px;
+    overflow-y: hidden;
+    max-height: 4rem;
 `

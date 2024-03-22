@@ -14,7 +14,7 @@ export const Home = ()=>{
         <div>
             <Header.Root>
                 <Header.Empty />
-                <Header.Logo text="Logo"/>
+                <Header.Logo src="logo.png"/>
                 <Navigation.Root>
                     {!user ? 
                         <Navigation.Item type="primary" to='login' >
