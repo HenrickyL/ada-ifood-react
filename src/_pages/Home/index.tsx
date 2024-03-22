@@ -18,6 +18,8 @@ export const Home = ()=>{
                 <Header.Logo src="logo.png"/>
                 <Navigation.Root>
                     <Navigation.Item to='' text="Home" />
+                    <Navigation.Item to='/products' text="Produtos" />
+
                     {!user ? 
                         <Navigation.Item type="primary" to='login' >
                             <Icon icon={LoginIcon} size={18}/>

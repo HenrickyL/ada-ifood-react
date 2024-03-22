@@ -1,23 +1,13 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const ProductCardTitle = styled.span`
-`
-
-export const ProductCardOldPrice = styled.span`
-`
-
-export const ProductCardPrice = styled.span`
-`
-export const ProductCardInterest = styled.span`
-`
-
-export const ProductCardField = styled.div`
-`
-
-export const ProductCardFieldInfo = styled.div`
-`
+export const ProductCardTitle = styled.span``
+export const ProductCardOldPrice = styled.span``
+export const ProductCardPrice = styled.span``
+export const ProductCardInterest = styled.span``
+export const ProductCardField = styled.div``
+export const ProductCardFieldInfo = styled.div``
 export const ProductCardCart = styled.div``
+export const ProductCardRating = styled.span``
 
 export const ProductCardSty = styled.div`
     font-weight: bold;
@@ -89,6 +79,17 @@ export const ProductCardSty = styled.div`
 
         &:hover{
             color: ${prop=>prop.theme.contrastLight};
+        }
+    }
+
+    ${ProductCardRating}{
+        display: flex;
+        gap:4px;
+        align-items: center;
+        padding: 8px;
+        svg{
+            color: gold;
+            filter: drop-shadow(0 0 0.2rem black); 
         }
     }
 `

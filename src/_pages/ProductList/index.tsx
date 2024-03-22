@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ProductCard } from "../../_components/ProductCard"
 import { useProductStore } from "../../_stores/product"
-import { ProductListSty } from "./style"
+import { ProductListPaginationContainer, ProductListSty, ProductListButton } from "./style"
 import { useQuery } from '@tanstack/react-query';
 import { PaginationData } from "../../_interfaces/pagination";
 import { listProducts } from "../../_network/api/products";
@@ -20,17 +20,37 @@ export const ProductList = ()=>{
 
     useEffect(() => {
         if (!isLoading && productsData) {
-          setProducts(productsData.data);
+          setProducts(productsData);
         }
       }, [productsData, isLoading, setProducts]);
 
     return(
         <ProductListSty>
             <main>
-                {products.map(p=>
+                {products.data.map(p=>
                     <ProductCard key={p.id}product={p} />
                 )}
             </main>
+            <ProductListPaginationContainer>
+                {[...Array(products?.last).keys()].map((x) => {
+                    const page = x + (products?.first ?? 1);
+
+                    return (
+                        <ProductListButton
+                            key={page}
+                            type={page == (products.prev||0)+1 ? 'active': 'default'}
+                            onClick={() => {
+                                setPaginationData((prev) => ({
+                                    ...prev,
+                                    page
+                                }));
+                            }}
+                        >
+                            {page}
+                        </ProductListButton>
+                    );
+                })}
+            </ProductListPaginationContainer>
         </ProductListSty>
     )
 }

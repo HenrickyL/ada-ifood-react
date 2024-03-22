@@ -19,27 +19,9 @@
       "password": "123456"
     },
     {
-      "id": "d654dd68-a234-466b-b3a4-792fb58ce6b9",
-      "email": "Henrickyl1@gmail.com",
-      "username": "",
-      "password": "123456"
-    },
-    {
       "id": "f807e237-ae33-4e91-a976-915124c6a38b",
       "email": "Henricky@gmail.com",
       "username": "Henricky",
-      "password": "123456"
-    },
-    {
-      "id": "4bae7c3b-9f52-4fb8-a02d-670fb3822397",
-      "email": "Luis@gmail.com",
-      "username": "Luis",
-      "password": "123456"
-    },
-    {
-      "id": "79b47545-fb75-41e0-acb5-ff1a4e401ef7",
-      "email": "Pedro@gmail.com",
-      "username": "Pedro",
       "password": "123456"
     }
   ],
@@ -54,7 +36,7 @@
       "stock": 100,
       "rating": 4.5,
       "discount": 0.1,
-      "installmentQuantity": 3,
+      "installmentQuantity": 4,
       "interestFree": 0.015
     },
     {
@@ -77,7 +59,7 @@
       "stock": 60,
       "rating": 4.8,
       "discount": 0.15,
-      "installmentQuantity": 4,
+      "installmentQuantity": 8,
       "interestFree": 0.01
     },
     {
@@ -100,7 +82,7 @@
       "stock": 70,
       "rating": 4.7,
       "discount": 0.20,
-      "installmentQuantity": 2,
+      "installmentQuantity": 6,
       "interestFree": 0
     },
     {
@@ -123,7 +105,7 @@
       "stock": 80,
       "rating": 4.6,
       "discount": 0.15,
-      "installmentQuantity": 3,
+      "installmentQuantity": 4,
       "interestFree": 0
     },
     {
@@ -146,7 +128,7 @@
       "stock": 75,
       "rating": 4.4,
       "discount": 0.12,
-      "installmentQuantity": 2,
+      "installmentQuantity": 6,
       "interestFree": 0
     },
     {
@@ -159,8 +141,108 @@
       "stock": 65,
       "rating": 4.8,
       "discount": 0.18,
-      "installmentQuantity": 4,
+      "installmentQuantity": 12,
       "interestFree": 0.01
+    },
+    {
+      "id": "11",
+      "name": "Blusa de Seda Sustentável",
+      "description": "Blusa elegante feita de seda sustentável",
+      "price": 79.99,
+      "image": "https://www.dhresource.com/webp/m/0x0/f2/albu/g10/M00/75/17/rBVaVl3YgwmAORqqAAJuZoQzkdI956.jpg",
+      "category": "Roupas",
+      "stock": 70,
+      "rating": 4.6
+    },
+    {
+      "id": "12",
+      "name": "Saia de Algodão Orgânico",
+      "description": "Saia confortável e estilosa",
+      "price": 59.99,
+      "image": "https://dcdn.mitiendanube.com/stores/289/644/products/41-d37ae0823645395c2f16419445090019-240-0.jpg",
+      "category": "Roupas",
+      "stock": 85,
+      "rating": 4.5
+    },
+    {
+      "id": "13",
+      "name": "Vestido de Linho",
+      "description": "Vestido de linho com design moderno",
+      "price": 99.99,
+      "image": "https://uselinz.com/cdn/shop/files/2023-Ver-o-Mulheres-Sem-Mangas-Vestido-De-Ver-o-Elegante-Em-Torno-Do-Pesco-o.jpg_640x640.jpg__1_480x.webp?v=1699181714",
+      "category": "Roupas",
+      "stock": 75,
+      "rating": 4.7
+    },
+    {
+      "id": "14",
+      "name": "Sandália Biodegradável",
+      "description": "Sandália confortável e biodegradável",
+      "price": 69.99,
+      "image": "https://images.ecycle.com.br/wp-content/uploads/2021/04/29133938/chinelo334.jpg.webp",
+      "category": "Calçados",
+      "stock": 90,
+      "rating": 4.6
+    },
+    {
+      "id": "15",
+      "name": "Mochila de Material Reciclado",
+      "description": "Mochila durável feita de materiais reciclados",
+      "price": 89.99,
+      "image": "https://p.globalsources.com/IMAGES/PDT/B5889944792/Mochila.jpg",
+      "category": "Acessórios",
+      "stock": 80,
+      "rating": 4.8
+    },
+    {
+      "id": "16",
+      "name": "Jaqueta de Algodão Orgânico",
+      "description": "Jaqueta quente para os dias frios",
+      "price": 119.99,
+      "image": "https://images.tcdn.com.br/img/img_prod/1016596/jaqueta_tricot_algodao_tricoport_intarsia_61_7_64b9c590ce9c99b944c7f724c8ee06dd.jpg",
+      "category": "Roupas",
+      "stock": 65,
+      "rating": 4.7
+    },
+    {
+      "id": "17",
+      "name": "Shorts de Material Reciclado",
+      "description": "Shorts confortáveis para o dia a dia",
+      "price": 49.99,
+      "image": "https://img.irroba.com.br/fit-in/1200x1200/filters:fill(fff):quality(80)/atenaaou/catalog/colecao-mar-02/short-azul-moletom.jpg",
+      "category": "Roupas",
+      "stock": 85,
+      "rating": 4.5
+    },
+    {
+      "id": "18",
+      "name": "Cinto de Material Sustentável",
+      "description": "Cinto estiloso e ecológico",
+      "price": 39.99,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ91VeNDADJNw2pqnO9UlfSjjbOPR9oZdu4FH1lNqaL2Q&s",
+      "category": "Acessórios",
+      "stock": 75,
+      "rating": 4.6
+    },
+    {
+      "id": "19",
+      "name": "Sapatilha de Algodão Orgânico",
+      "description": "Sapatilha confortável e sustentável",
+      "price": 79.99,
+      "image": "https://photos.enjoei.com.br/sapatilha-algodao-organico-91822478/800x800/czM6Ly9waG90b3MuZW5qb2VpLmNvbS5ici9wcm9kdWN0cy82NDg5NjMwLzc5MDQzMmNjNzNkNjExMGZiNmFiNWJhYjQwZWRhMTZhLmpwZw",
+      "category": "Calçados",
+      "stock": 70,
+      "rating": 4.7
+    },
+    {
+      "id": "20",
+      "name": "Camisa de Linho",
+      "description": "Camisa de linho com design moderno",
+      "price": 69.99,
+      "image": "https://cdn.awsli.com.br/2500x2500/1300/1300343/produto/131296244/myr-23-0924818-01jlks41ds.jpg",
+      "category": "Roupas",
+      "stock": 80,
+      "rating": 4.6
     }
   ]
 }

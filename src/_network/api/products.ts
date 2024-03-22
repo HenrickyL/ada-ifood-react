@@ -22,7 +22,7 @@ export interface IReview {
   
   const productPath = 'products';
   
-  export async function listProducts(pagination?: PaginationData) {
+  export async function listProducts(pagination: PaginationData) : Promise<PaginationResponse<IProduct>> {
     await new Promise((res) => setTimeout(res, 1000));
   
     let requestPath = productPath;
