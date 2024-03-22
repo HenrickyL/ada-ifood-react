@@ -5,7 +5,6 @@ import { ProductListPaginationContainer, ProductListSty, ProductListButton } fro
 import { useQuery } from '@tanstack/react-query';
 import { PaginationData } from "../../_interfaces/pagination";
 import { listProducts } from "../../_network/api/products";
-import { Link } from "react-router-dom";
 
 export const ProductList = ()=>{
     const [paginationData, setPaginationData] = useState<PaginationData>({
@@ -26,32 +25,39 @@ export const ProductList = ()=>{
       }, [productsData, isLoading, setProducts]);
 
     return(
-        <ProductListSty>
-            <main>
-                {products.data.map(p=>
-                    <ProductCard to={p.id} key={p.id}product={p} />
-                )}
-            </main>
-            <ProductListPaginationContainer>
-                {[...Array(products?.last).keys()].map((x) => {
-                    const page = x + (products?.first ?? 1);
+        <>
+            {!isLoading ? 
+                <ProductListSty>
+                    <main>
+                        {products.data.map(p=>
+                            <ProductCard to={p.id} key={p.id}product={p} />
+                        )}
+                    </main>
+                    <ProductListPaginationContainer>
+                        {[...Array(products?.last).keys()].map((x) => {
+                            const page = x + (products?.first ?? 1);
 
-                    return (
-                        <ProductListButton
-                            key={page}
-                            type={page == (products.prev||0)+1 ? 'active': 'default'}
-                            onClick={() => {
-                                setPaginationData((prev) => ({
-                                    ...prev,
-                                    page
-                                }));
-                            }}
-                        >
-                            {page}
-                        </ProductListButton>
-                    );
-                })}
-            </ProductListPaginationContainer>
-        </ProductListSty>
+                            return (
+                                <ProductListButton
+                                    key={page}
+                                    type={page == (products.prev||0)+1 ? 'active': 'default'}
+                                    onClick={() => {
+                                        setPaginationData((prev) => ({
+                                            ...prev,
+                                            page
+                                        }));
+                                    }}
+                                >
+                                    {page}
+                                </ProductListButton>
+                            );
+                        })}
+                    </ProductListPaginationContainer>
+                </ProductListSty>
+
+                : 
+                <span>loading...</span>
+            }
+        </> 
     )
 }

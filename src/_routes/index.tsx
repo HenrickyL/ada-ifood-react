@@ -7,6 +7,7 @@ import { NotFound } from "../_pages/NotFound";
 import { ProductList } from "../_pages/ProductList";
 import { ProductDetails } from "../_pages/ProductDetails";
 import { Cart } from "../_pages/Cart";
+import { HomeIntro } from "../_pages/HomeIntro";
 
 
 
@@ -17,7 +18,7 @@ export const routes = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <h1>Home</h1>
+                element: <HomeIntro />
             },
             {
                 path: 'products',

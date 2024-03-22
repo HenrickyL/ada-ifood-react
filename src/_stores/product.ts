@@ -28,7 +28,7 @@ export const useProductStore = create<ProductStoreProps>((set) => ({
         })
     },
     setProducts: (products: PaginationResponse<IProduct>)=>{
-        set((prev) => {
+        set(() => {
             return {products: products}
         })
     },
