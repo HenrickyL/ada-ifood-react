@@ -1,3 +1,4 @@
+import { HeaderButton } from "./HeaderButton";
 import { HeaderEmpty } from "./HeaderEmpty";
 import { HeaderField } from "./HeaderField";
 import { HeaderLogo } from "./HeaderLogo";
@@ -7,5 +8,6 @@ export const Header = {
     Root: HeaderRoot,
     Field: HeaderField,
     Logo: HeaderLogo,
-    Empty: HeaderEmpty
+    Empty: HeaderEmpty,
+    Button: HeaderButton
 }

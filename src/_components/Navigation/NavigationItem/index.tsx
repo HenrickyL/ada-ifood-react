@@ -5,11 +5,12 @@ import { ReactNode } from "react"
 interface NavigationItemProps extends NavLinkProps{
     children?: ReactNode
     text?: string
+    type?: 'default' | 'primary'
 }
 
 export const NavigationItem = (props: NavigationItemProps)=>{
     return(
-        <NavigationItemSty to={props.to}>
+        <NavigationItemSty type={props.type} to={props.to}>
             {props.children ? props.children : props.text}
         </NavigationItemSty>
     )

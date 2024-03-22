@@ -5,5 +5,5 @@ export const HeaderFieldSty = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: 4px;
 `

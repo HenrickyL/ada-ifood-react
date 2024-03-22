@@ -2,22 +2,34 @@ import { Outlet } from "react-router-dom";
 import { useAuth } from "../../_hooks/auth";
 import { Header } from "../../_components/Header";
 import { Navigation } from "../../_components/Navigation";
-
+import { CartButton } from "../../_components/CartButton";
+import { Icon } from "../../_components/Icon";
+import { 
+    FaSignInAlt as LoginIcon,
+    FaSignOutAlt as LogoutIcon } from "react-icons/fa";
 export const Home = ()=>{
-    const { user } = useAuth();
-    return (!user ? 
+    const { user, signOut } = useAuth();
+    return (
         <div>
             <Header.Root>
                 <Header.Empty />
-                <span>Logo</span>
+                <Header.Logo text="Logo"/>
                 <Navigation.Root>
-                    <Navigation.Item to={'/test'} text="Test"/>
-                    <Navigation.Item to={'cart'} text="cart"/>
+                   
+                    {!user ? 
+                         <Navigation.Item type="primary" to='login' >
+                         <Icon icon={LoginIcon} size={18}/>
+                         <span>Login</span>
+                     </Navigation.Item>:  
+                        <Header.Button onClick={()=> {signOut()}} 
+                            size={18} icon={LogoutIcon} text="Logout" />
+                    }
+                    <CartButton />
                 </Navigation.Root>
             </Header.Root>
-            <Outlet />
+            <main>
+                <Outlet />
+            </main>
         </div>
-        :
-        <h1>Welcome, {user.username}</h1>
     )
 }
