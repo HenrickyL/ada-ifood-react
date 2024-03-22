@@ -6,6 +6,9 @@ import { IoIosAlert as AlertIcon } from "react-icons/io";
 import { ProductDetailsSty, ProductDetailsStyContainer} from "./style";
 import { ProductCardField, ProductCardFieldInfo, ProductCardInterest, ProductCardOldPrice, ProductCardPrice, ProductCardTitle } from "../../_components/ProductCard/style";
 import { getStringToNumber } from "../../_middlewares/NumberMiddleware";
+import { Icon } from "../../_components/Icon";
+import { FaAngleLeft  as BackIcon } from "react-icons/fa";
+
 
 export const ProductDetails = ()=>{
     const { productId } = useParams();
@@ -30,6 +33,11 @@ export const ProductDetails = ()=>{
 
     return(
         <ProductDetailsSty>
+            <div onClick={()=>{
+                navigation(-1)
+            }}>
+                <Icon icon={BackIcon} size={36}/>
+            </div>
             <img src={product?.image} alt={product?.name} />
             <ProductDetailsStyContainer>
                     <ProductCardTitle>{product?.name}</ProductCardTitle>
@@ -45,6 +53,7 @@ export const ProductDetails = ()=>{
                             <ProductCardInterest>ou {product?.installmentQuantity}x de R$ {getStringToNumber(product.price*(1-(product?.discount || 0))/product.installmentQuantity)} sem juros</ProductCardInterest>
                         }
                     </ProductCardFieldInfo>
+                        <p>{product?.description}</p>
             </ProductDetailsStyContainer>
         </ProductDetailsSty>
     )

@@ -29,4 +29,8 @@ export const ProductDetailsSty = styled.div`
         border: 1px solid ${prop=>prop.theme.contrast};
         width: 28rem;
     }
+
+    svg{
+        cursor: pointer;
+    }
 `
