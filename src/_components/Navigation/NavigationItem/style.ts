@@ -22,8 +22,10 @@ export const NavigationItemSty = styled(NavLink)<NavigationItemSty>`
     span{
         font-weight: bold;
     }
-
-    &:hover{
-        border: 2px solid ${prop=>prop.theme.contrast};
-    }
+    ${prop=> prop.type === 'primary' &&`
+        &:hover{
+            border: 2px solid ${prop.theme.contrast};
+        }
+    `}
+    
 `

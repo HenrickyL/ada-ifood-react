@@ -8,12 +8,12 @@ export const PrivateRoute = ({children}:{children: React.ReactNode})=>{
     const { user } = useAuth();
     const {addNotification } = useNotificationStore()
     useEffect(()=>{
-        addNotification({
-            id: '0001',
-            type:"warning",
-            icon: NoCredentialIcon,
-            message:"You need credentials"
-        })
+        if(!user)
+            addNotification({
+                type:"warning",
+                icon: NoCredentialIcon,
+                message:"You need credentials"
+            })
     }, [])
     return user? children : <Navigate to="/login" />
 }
