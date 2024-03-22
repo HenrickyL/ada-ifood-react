@@ -35,7 +35,6 @@ export const AuthProvider = ( {children}:{ children: React.ReactNode})=>{
         if (data.length == 0 || !currentUser) {
             throw new Error('Invalid credentials!');
         }
-        console.log(currentUser)
         StorageMiddleware.setContent<IUser>(StorageKeys.USER, currentUser)
         setUser(currentUser);
     }
