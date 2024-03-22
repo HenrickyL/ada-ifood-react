@@ -9,7 +9,7 @@ import { listProducts } from "../../_network/api/products";
 export const ProductList = ()=>{
     const [paginationData, setPaginationData] = useState<PaginationData>({
         page: 1,
-        perPage: 5
+        perPage: 8
     });
     const {products, setProducts} = useProductStore()
     
