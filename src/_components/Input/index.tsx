@@ -5,6 +5,7 @@ import { InputIcon } from "./InputIcon";
 import { InputInput } from "./InputInput";
 import { InputPassword } from "./InputPassword";
 import { InputRoot } from "./InputRoot";
+import { InputSubmit } from "./InputSubmit";
 //use pattern composition 
 export const Input = {
     Root: InputRoot,
@@ -13,5 +14,6 @@ export const Input = {
     Input: InputInput,
     Field: InputField,
     Password: InputPassword,
-    Label: InputLabel
+    Label: InputLabel,
+    Submit: InputSubmit
 }

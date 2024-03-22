@@ -29,6 +29,18 @@
       "email": "Henricky@gmail.com",
       "username": "Henricky",
       "password": "123456"
+    },
+    {
+      "id": "4bae7c3b-9f52-4fb8-a02d-670fb3822397",
+      "email": "Luis@gmail.com",
+      "username": "Luis",
+      "password": "123456"
+    },
+    {
+      "id": "79b47545-fb75-41e0-acb5-ff1a4e401ef7",
+      "email": "Pedro@gmail.com",
+      "username": "Pedro",
+      "password": "123456"
     }
   ],
   "products": [

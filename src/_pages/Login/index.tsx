@@ -8,6 +8,7 @@ import * as Yup from 'yup';
 import { useAuth } from "../../_hooks/auth";
 import { useNotificationStore } from "../../_stores/notification";
 import { FaExclamationCircle as ErrorIcon} from "react-icons/fa";
+import { useAppStateStore } from "../../_stores/applicationState";
 
 interface LoginFormEntry{
     email: string;
@@ -25,7 +26,7 @@ export const Login = ()=>{
     const navigate = useNavigate();
     const {logIn} = useAuth()
     const {addNotification} = useNotificationStore()
-
+    const {setLoading} = useAppStateStore()
     const form = useFormik<LoginFormEntry>({
         initialValues: {
             email: '',
@@ -34,6 +35,7 @@ export const Login = ()=>{
         validationSchema,
         onSubmit: async (value) => {
            try {
+            setLoading(true)
             await logIn(value)
             navigate('/');
            } catch (ex) {
@@ -43,6 +45,7 @@ export const Login = ()=>{
                     icon: ErrorIcon
                 })
            }
+           setLoading(false)
         }
     });
 
@@ -68,10 +71,10 @@ export const Login = ()=>{
                                 placeholder="Password"/>
                         </Input.Field>
                     </Input.Root>
-                    <Input.Button 
+                    <Input.Submit 
                         onClick={form.submitForm}
                         text="Entrar" 
-                        type="submit"/>
+                        />
                     <Form.Field>
                         <Form.Link text="Cadastrar?" to="/signin"/>
                     </Form.Field>

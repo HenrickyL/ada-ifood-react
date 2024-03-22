@@ -9,7 +9,8 @@ import { IoMdMail as MailIcon } from "react-icons/io";
 import { FaUser as UsernameIcon } from "react-icons/fa";
 import { useNotificationStore } from "../../_stores/notification";
 import { FaExclamationCircle as ErrorIcon } from 'react-icons/fa';
-
+import { useAppStateStore } from "../../_stores/applicationState";
+import { FaCheckCircle as SuccessIcon } from 'react-icons/fa';
 
 interface SigninFormEntry{
     username: string;
@@ -28,6 +29,7 @@ export const Signin = ()=>{
     const navigate = useNavigate();
     const {signIn} = useAuth()
     const {addNotification} = useNotificationStore()
+    const {setLoading} = useAppStateStore()
 
     const form = useFormik<SigninFormEntry>({
         initialValues: {
@@ -38,8 +40,14 @@ export const Signin = ()=>{
         validationSchema,
         onSubmit: async (value) => {
            try {
+            setLoading(true)
             await signIn(value)
             navigate('/login');
+            addNotification({
+                message: `Usuário cadastrado com Sucesso.`,
+                type: 'success',
+                icon: SuccessIcon
+            })
            } catch (ex) {
                 addNotification({
                     message: `Erro ao cadastrar. ${ex}.`,
@@ -47,6 +55,7 @@ export const Signin = ()=>{
                     icon: ErrorIcon
                 })
            }
+           setLoading(false)
         }
     });
 
@@ -83,10 +92,10 @@ export const Signin = ()=>{
                                 placeholder="Password"/>
                         </Input.Field>
                     </Input.Root>
-                    <Input.Button 
+                    <Input.Submit 
                         onClick={form.submitForm}
                         text="Cadastrar" 
-                        type="submit"/>
+                        />
                     <Form.Field>
                         <Form.Link text="Entrar?" to="/login"/>
                     </Form.Field>
