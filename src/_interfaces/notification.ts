@@ -8,7 +8,7 @@ export interface NotificationActions{
 }
 
 export interface INotification{
-    id: string,
+    id?: string,
     type?: NotificationTypes,
     message: string,
     icon?: IconType,

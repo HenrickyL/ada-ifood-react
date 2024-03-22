@@ -2,7 +2,7 @@ import {
     PaginationData,
     PaginationResponse
 } from '../../_interfaces/pagination';
-import { User } from '../../_interfaces/user';
+import { IUser } from '../../_interfaces/user';
 import { client } from '../api';
 
 export interface AuthLoginCredentials {
@@ -18,36 +18,35 @@ export interface AuthSignInCredentials {
 
 
 const path = 'users';
-
-export async function list(pagination?: PaginationData) {
+export async function list(pagination?: PaginationData): Promise<PaginationResponse<IUser> | IUser[]> {
     await new Promise((res) => setTimeout(res, 1000));
-
     let requestPath = path;
 
     if (pagination) {
         const { page, perPage } = pagination;
         requestPath = `${requestPath}?_page=${page}&_per_page=${perPage}`;
+        const { data } = await client.get<PaginationResponse<IUser>>(requestPath);
+        return data;
     }
-
-    const { data } = await client.get<PaginationResponse<User>>(requestPath);
+    const { data } = await client.get<IUser[]>(requestPath);
     return data;
 }
 
-export async function findById(id: string): Promise<User> {
-    const { data } = await client.get<User>(`${path}/${id}`);
+export async function findById(id: string): Promise<IUser> {
+    const { data } = await client.get<IUser>(`${path}/${id}`);
     return data;
 }
 
-export async function findByEmail(email: string): Promise<User[]> {
-    const { data } = await client.get<User[]>(`${path}?email=${email}`);
+export async function findByEmail(email: string): Promise<IUser[]> {
+    const { data } = await client.get<IUser[]>(`${path}?email=${email}`);
     return data;
 }
 
-export async function create(user: User): Promise<void> {
+export async function create(user: IUser): Promise<void> {
     await client.post(`${path}`, user);
 }
 
-export async function update(id: string, user: User): Promise<void> {
+export async function update(id: string, user: IUser): Promise<void> {
     await client.put(`${path}/${id}`, user);
 }
 

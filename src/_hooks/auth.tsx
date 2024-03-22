@@ -1,13 +1,14 @@
 import { createContext, useContext, useMemo, useState } from "react";
-import { User } from "../_interfaces/user";
+import { IUser } from "../_interfaces/user";
 import { client} from '../_network/api'
 import { StorageKeys, StorageMiddleware } from "../_middlewares/StorageMiddleware";
-import { AuthLoginCredentials, AuthSignInCredentials } from "../_network/api/users";
+import { AuthLoginCredentials, AuthSignInCredentials, list } from "../_network/api/users";
+import { PaginationResponse } from "../_interfaces/pagination";
 
 
 
 interface AuthContextData {
-    user: User | null;
+    user: IUser | null;
     logIn(credentials: AuthLoginCredentials): Promise<void>;
     signIn(credentials: AuthSignInCredentials): Promise<void>;
     signOut(): Promise<void> | void;
@@ -18,19 +19,26 @@ const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 /* ---------------------- */
 
 export const AuthProvider = ( {children}:{ children: React.ReactNode})=>{
-    const [user, setUser] = useState<User | null>(StorageMiddleware.getContent<User>(StorageKeys.USER))
+    const [user, setUser] = useState<IUser | null>(StorageMiddleware.getContent<IUser>(StorageKeys.USER))
     function signOut() {
         StorageMiddleware.removeContent(StorageKeys.USER)
         setUser(null);
     }
     async function logIn({ email, password }: AuthLoginCredentials) {
-        const { data } = await client.get<User[]>(`users?email=${email}`);
-
-        if (data.length == 0 || data[0].password !== password) {
+        const response = await list();
+        let data: IUser[] = []
+        if (Array.isArray(data)) {
+            data = response as IUser[]
+        } else {
+        const paginationData = response as PaginationResponse<IUser>
+        data = paginationData.data  
+        }
+        const onValidation = data.some(user => user.password === password && user.email.toLocaleLowerCase() == email.toLocaleLowerCase())
+        if (data.length == 0 || !onValidation) {
             throw new Error('Invalid credentials!');
         }
-        const currentUser =data[0]
-        StorageMiddleware.setContent<User>(StorageKeys.USER, currentUser)
+        const currentUser = data[0]
+        StorageMiddleware.setContent<IUser>(StorageKeys.USER, currentUser)
         setUser(currentUser);
     }
     async function signIn(data: AuthSignInCredentials){

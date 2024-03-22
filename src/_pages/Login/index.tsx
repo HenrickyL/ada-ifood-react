@@ -6,6 +6,8 @@ import { IoMdMail as MailIcon } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import * as Yup from 'yup';
 import { useAuth } from "../../_hooks/auth";
+import { useNotificationStore } from "../../_stores/notification";
+import { FaExclamationCircle as ErrorIcon} from "react-icons/fa";
 
 interface LoginFormEntry{
     email: string;
@@ -21,7 +23,8 @@ const validationSchema = Yup.object().shape({
 
 export const Login = ()=>{
     const navigate = useNavigate();
-    const {logIn: signIn} = useAuth()
+    const {logIn} = useAuth()
+    const {addNotification} = useNotificationStore()
 
     const form = useFormik<LoginFormEntry>({
         initialValues: {
@@ -29,12 +32,16 @@ export const Login = ()=>{
             password: ''
         },
         validationSchema,
-        onSubmit: async (value, {setFieldError}) => {
+        onSubmit: async (value) => {
            try {
-            await signIn(value)
+            await logIn(value)
             navigate('/');
            } catch (ex) {
-                setFieldError('password', 'Usuário inválido');
+                addNotification({
+                    message: 'Erro ao fazer login. Verifique suas credenciais e tente novamente.',
+                    type: 'error',
+                    icon: ErrorIcon
+                })
            }
         }
     });

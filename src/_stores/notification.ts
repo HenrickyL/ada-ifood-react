@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { INotification } from '../_interfaces/notification';
-
+import {v4 as uuid } from 'uuid'
 interface NotificationStoreProps{
     queue: INotification[]
     addNotification: (notification: INotification)=>void,
@@ -12,7 +12,8 @@ const timer: number = 5000
 export const useNotificationStore = create<NotificationStoreProps>( (set)=>({
     queue: [],
     addNotification: (notification: INotification) =>{
-        
+        if(!notification.id)
+            notification = {id: uuid(),...notification}
         set((state) => ({
             queue: [...state.queue, notification],
         }))
