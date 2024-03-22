@@ -45,52 +45,122 @@
   ],
   "products": [
     {
-      "id": "596c3f80-34d3-4e50-8be1-f30635a7c94c",
+      "id": "1",
       "name": "Camiseta Sustentável",
       "description": "Feita 100% de algodão orgânico",
       "price": 49.99,
-      "image": "URL da imagem",
+      "image": "https://img.elo7.com.br/product/main/1F7CF2D/camiseta-mundo-sustentavel-meio-ambiente-meio-ambiente.jpg",
       "category": "Roupas",
       "stock": 100,
       "rating": 4.5,
-      "reviews": [
-        {
-          "id": "7b8d15c3-10a4-4e68-b485-3f4c054f5aee",
-          "username": "Alice Johnson",
-          "comment": "Adorei a qualidade do produto!",
-          "rating": 5
-        },
-        {
-          "id": "6fbd2a9a-cba4-4c1f-87a2-ffab5829bea9",
-          "username": "Charlie Brown",
-          "comment": "Entrega rápida e produto excelente.",
-          "rating": 4
-        }
-      ]
+      "discount": 0.1,
+      "installmentQuantity": 3,
+      "interestFree": 0.015
     },
     {
-      "id": "4490a7b7-b51d-48ba-8120-32d15b67583b",
+      "id": "2",
       "name": "Calça de Material Reciclado",
       "description": "Confortável e feita de materiais reciclados",
       "price": 89.99,
-      "image": "URL da imagem",
+      "image": "https://images.tcdn.com.br/img/img_prod/1082018/180_calca_run_more_tecido_reciclado_com_shape_soltinho_3145_2_b369a71446fe9a5037b9b7793bed98bf.jpg",
       "category": "Roupas",
       "stock": 80,
+      "rating": 4.7
+    },
+    {
+      "id": "3",
+      "name": "Vestido Ecológico",
+      "description": "Vestido elegante feito de fibras sustentáveis",
+      "price": 119.99,
+      "image": "https://global.cdn.magazord.com.br/geracaomoderna/img/2023/10/produto/7612/vestido-midi-em-linho-ecologico-azul-serenity-7238-geracao-moderna.jpg?ims=fit-in/475x650/filters:fill(white)",
+      "category": "Roupas",
+      "stock": 60,
+      "rating": 4.8,
+      "discount": 0.15,
+      "installmentQuantity": 4,
+      "interestFree": 0.01
+    },
+    {
+      "id": "4",
+      "name": "Tênis Biodegradável",
+      "description": "Tênis moderno e biodegradável",
+      "price": 99.99,
+      "image": "https://tm.ibxk.com.br/2016/11/19/19152729159050.jpg?ims=1200x675",
+      "category": "Calçados",
+      "stock": 50,
+      "rating": 4.6
+    },
+    {
+      "id": "5",
+      "name": "Bolsa de Palha",
+      "description": "Bolsa artesanal feita de palha",
+      "price": 79.99,
+      "image": "https://rchloblogprod.blob.core.windows.net/wp-content/blog-mosaico-bolsa-palha-urbano-ads13398.jpg",
+      "category": "Acessórios",
+      "stock": 70,
       "rating": 4.7,
-      "reviews": [
-        {
-          "id": "3f2f0e18-9f79-4a20-88a7-1d63a0e62bb4",
-          "username": "Bob Smith",
-          "comment": "Muito confortável e estilosa!",
-          "rating": 5
-        },
-        {
-          "id": "6fbd2a9a-cba4-4c1f-87a2-ffab5829bea9",
-          "username": "Charlie Brown",
-          "comment": "Adorei a iniciativa sustentável.",
-          "rating": 5
-        }
-      ]
+      "discount": 0.20,
+      "installmentQuantity": 2,
+      "interestFree": 0
+    },
+    {
+      "id": "6",
+      "name": "Chapéu de Algodão Orgânico",
+      "description": "Chapéu estiloso e confortável",
+      "price": 39.99,
+      "image": "https://m.media-amazon.com/images/I/41HlfPiwBCL._AC_SY1000_.jpg",
+      "category": "Acessórios",
+      "stock": 90,
+      "rating": 4.5
+    },
+    {
+      "id": "7",
+      "name": "Blusa de Linho",
+      "description": "Blusa de linho com design moderno",
+      "price": 59.99,
+      "image": "https://thumb.braavo.me/modaemcasa/0/3563186518.webp",
+      "category": "Roupas",
+      "stock": 80,
+      "rating": 4.6,
+      "discount": 0.15,
+      "installmentQuantity": 3,
+      "interestFree": 0
+    },
+    {
+      "id": "8",
+      "name": "Shorts de Algodão Reciclado",
+      "description": "Shorts confortáveis para o dia a dia",
+      "price": 44.99,
+      "image": "https://vistabalsa.com.br/wp-content/uploads/2023/01/0389_BLS.jpg",
+      "category": "Roupas",
+      "stock": 85,
+      "rating": 4.5
+    },
+    {
+      "id": "9",
+      "name": "Cinto de Cortiça",
+      "description": "Cinto durável e ecológico",
+      "price": 29.99,
+      "image": "https://m.media-amazon.com/images/I/41H9bNUA0PL._AC_SY1000_.jpg",
+      "category": "Acessórios",
+      "stock": 75,
+      "rating": 4.4,
+      "discount": 0.12,
+      "installmentQuantity": 2,
+      "interestFree": 0
+    },
+    {
+      "id": "10",
+      "name": "Jaqueta de Lã Sustentável",
+      "description": "Jaqueta quente para os dias frios",
+      "price": 129.99,
+      "image": "https://img.ltwebstatic.com/images3_spmp/2023/08/03/38/169104252728e79b330a1d7addfff72bd27db57ed7_thumbnail_720x.jpg",
+      "category": "Roupas",
+      "stock": 65,
+      "rating": 4.8,
+      "discount": 0.18,
+      "installmentQuantity": 4,
+      "interestFree": 0.01
     }
   ]
 }

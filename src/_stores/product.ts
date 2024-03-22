@@ -15,7 +15,7 @@ export const useProductStore = create<ProductStoreProps>((set) => ({
     addToCart: (productID: string) =>{
         set((prev) => {
             const product = prev.products.find(x=>x.id === productID)
-            return product ? {cart: [product,...prev.cart]}: {cart: prev.cart}
+            return product && !prev.cart.some(x=>x.id === productID) ? {cart: [product,...prev.cart]}: {cart: prev.cart}
         })
     },
     setProducts: (products: IProduct[])=>{

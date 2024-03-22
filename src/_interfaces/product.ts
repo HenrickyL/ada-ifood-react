@@ -15,4 +15,7 @@ export interface IReview {
     stock: number;
     rating: number;
     reviews: IReview[];
+    discount?: number;
+    installmentQuantity?: number; // Quantidade de parcelas
+    interest?: number; // Parcelamento com ou sem juros
   }
