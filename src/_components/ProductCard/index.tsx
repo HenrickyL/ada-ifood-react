@@ -1,4 +1,5 @@
 import { IProduct } from "../../_interfaces/product"
+import { getStringToNumber } from "../../_middlewares/NumberMiddleware";
 import { useProductStore } from "../../_stores/product";
 import { Icon } from "../Icon";
 import { ProductCardCart, ProductCardField, ProductCardFieldInfo, ProductCardInterest, ProductCardOldPrice, ProductCardPrice, ProductCardRating, ProductCardSty, ProductCardTitle } from "./style"
@@ -6,15 +7,14 @@ import { FaCartPlus as CartIcon,
     FaStar as StarIcon} from "react-icons/fa";
 interface ProductCardProps{
     product: IProduct
+    to: string
 }
 
-function getStringToNumber(value: number): string{
-    return value.toFixed(2)
-}
-export const ProductCard = ({product}: ProductCardProps)=>{
+
+export const ProductCard = ({product, to}: ProductCardProps)=>{
     const {addToCart} = useProductStore()
     return(
-        <ProductCardSty>
+        <ProductCardSty to={to}>
             <img src={product.image} alt={`${product.name}`}/>
             <div>
                 <ProductCardTitle>{product.name}</ProductCardTitle>
@@ -29,7 +29,6 @@ export const ProductCard = ({product}: ProductCardProps)=>{
                     {product.installmentQuantity && 
                         <ProductCardInterest>ou {product.installmentQuantity}x de R$ {getStringToNumber(product.price*(1-(product.discount || 0))/product.installmentQuantity)} sem juros</ProductCardInterest>
                     }
-                    
                 </ProductCardFieldInfo>
             </div>
 

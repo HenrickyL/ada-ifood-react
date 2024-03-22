@@ -5,6 +5,7 @@ import { ProductListPaginationContainer, ProductListSty, ProductListButton } fro
 import { useQuery } from '@tanstack/react-query';
 import { PaginationData } from "../../_interfaces/pagination";
 import { listProducts } from "../../_network/api/products";
+import { Link } from "react-router-dom";
 
 export const ProductList = ()=>{
     const [paginationData, setPaginationData] = useState<PaginationData>({
@@ -28,7 +29,7 @@ export const ProductList = ()=>{
         <ProductListSty>
             <main>
                 {products.data.map(p=>
-                    <ProductCard key={p.id}product={p} />
+                    <ProductCard to={p.id} key={p.id}product={p} />
                 )}
             </main>
             <ProductListPaginationContainer>

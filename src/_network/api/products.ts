@@ -1,27 +1,9 @@
 import { PaginationData, PaginationResponse } from "../../_interfaces/pagination";
+import { IProduct } from "../../_interfaces/product";
 import { client } from "../api";
 
-export interface IReview {
-    id: string;
-    name: string;
-    comment: string;
-    rating: number;
-  }
-  
-  export interface IProduct {
-    id: string;
-    name: string;
-    description: string;
-    price: number;
-    image: string;
-    category: string;
-    stock: number;
-    rating: number;
-    reviews: IReview[];
-  }
   
   const productPath = 'products';
-  
   export async function listProducts(pagination: PaginationData) : Promise<PaginationResponse<IProduct>> {
     await new Promise((res) => setTimeout(res, 1000));
   

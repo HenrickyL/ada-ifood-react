@@ -1,15 +1,60 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const ProductCardTitle = styled.span``
-export const ProductCardOldPrice = styled.span``
+export const ProductCardTitle = styled.span`
+    text-align: center;
+    font-size: 18px;
+`
+export const ProductCardOldPrice = styled.span`
+    text-decoration: line-through;
+    font-size: 12px;
+    color: ${prop=>prop.theme.contrastLight};
+`
 export const ProductCardPrice = styled.span``
 export const ProductCardInterest = styled.span``
-export const ProductCardField = styled.div``
-export const ProductCardFieldInfo = styled.div``
-export const ProductCardCart = styled.div``
-export const ProductCardRating = styled.span``
+export const ProductCardField = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+`
+export const ProductCardFieldInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-export const ProductCardSty = styled.div`
+    ${ProductCardInterest}{
+        font-size: 14px;
+    }
+`
+export const ProductCardCart = styled.div`
+    position: absolute;
+    color: ${prop=>prop.theme.contrast};
+    font-size: 20px;
+    bottom: 4px;
+    left: 0px;
+    transition: 0.5s;
+    cursor: pointer;
+    width: min-content;
+    height: min-content;
+
+    &:hover{
+        color: ${prop=>prop.theme.contrastLight};
+    }
+`
+export const ProductCardRating = styled.span`
+    display: flex;
+    gap:4px;
+    align-items: center;
+    padding: 8px;
+    svg{
+        color: gold;
+        filter: drop-shadow(0 0 0.2rem black); 
+    }
+`
+
+export const ProductCardSty = styled(Link)`
     font-weight: bold;
     position: relative;
     display: flex;
@@ -18,6 +63,8 @@ export const ProductCardSty = styled.div`
     width: 100%;
     min-width: 10rem;
     max-width: 16rem;
+    text-decoration: none;
+    color: unset;
 
     gap: 8px;
     border-radius: 8px;
@@ -28,6 +75,7 @@ export const ProductCardSty = styled.div`
         width: 100%;
         object-fit: cover;
     }
+    
     div{
         display: flex;
         flex-direction: column;
@@ -36,60 +84,5 @@ export const ProductCardSty = styled.div`
         gap: 4px;
         padding: 8px;
         height: 100%;
-        ${ProductCardTitle}{
-            text-align: center;
-            font-size: 18px;
-        }
-        
-        ${ProductCardFieldInfo}{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-            ${ProductCardInterest}{
-                font-size: 14px;
-            }
-        }
-
-        ${ProductCardField}{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 4px;
-
-            ${ProductCardOldPrice}{
-                text-decoration: line-through;
-                font-size: 12px;
-                color: ${prop=>prop.theme.contrastLight};
-            }
-        } 
-    }
-
-    ${ProductCardCart}{
-        position: absolute;
-        color: ${prop=>prop.theme.contrast};
-        font-size: 20px;
-        bottom: 4px;
-        left: 0px;
-        transition: 0.5s;
-        cursor: pointer;
-        width: min-content;
-        height: min-content;
-
-        &:hover{
-            color: ${prop=>prop.theme.contrastLight};
-        }
-    }
-
-    ${ProductCardRating}{
-        display: flex;
-        gap:4px;
-        align-items: center;
-        padding: 8px;
-        svg{
-            color: gold;
-            filter: drop-shadow(0 0 0.2rem black); 
-        }
     }
 `

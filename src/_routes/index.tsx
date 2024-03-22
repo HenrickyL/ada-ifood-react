@@ -22,9 +22,11 @@ export const routes = createBrowserRouter([
             {
                 path: 'products',
                 element:<ProductList />,
-                children: [
-                    {path: ':productId', element: <ProductDetails />},
-                ]
+                
+            },
+            {
+                path: 'products/:productId', 
+                element: <ProductDetails />
             },
             {
                 path: 'cart',
