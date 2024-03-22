@@ -7,8 +7,10 @@ import { Icon } from "../../_components/Icon";
 import { 
     FaSignInAlt as LoginIcon,
     FaSignOutAlt as LogoutIcon } from "react-icons/fa";
+import { useProductStore } from "../../_stores/product";
 export const Home = ()=>{
     const { user, signOut } = useAuth();
+    const {cart} = useProductStore()
     const navigate = useNavigate()
     return (
         <div>
@@ -25,7 +27,7 @@ export const Home = ()=>{
                             size={18} icon={LogoutIcon} text="Logout" />
                     }
                     <Navigation.Item to='/cart'>
-                        <CartButton value={12}/>
+                        <CartButton value={cart.length}/>
                     </Navigation.Item>
                 </Navigation.Root>
             </Header.Root>

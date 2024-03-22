@@ -8,7 +8,7 @@ export const CartButton = ({value}: CartButtonProps)=>{
     return (
         <CartButtonSty >
             <Icon  icon={CartIcon} size={24}/>
-            <span>{value}</span>
+            {value > 0  &&<span>{value}</span>}
         </CartButtonSty>
     )
 }

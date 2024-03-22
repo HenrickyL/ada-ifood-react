@@ -1,20 +1,8 @@
 import { NavLink } from "react-router-dom";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 interface NavigationItemSty{
     type?: 'default' | 'primary'
 }
-
-const animate = keyframes`
-    0%{
-        width: 5px;
-    }
-
-    100%{
-        width: 1.5rem;
-        height: 3px;
-    }
-
-`
 
 export const NavigationItemSty = styled(NavLink)<NavigationItemSty>`
     cursor: pointer;
