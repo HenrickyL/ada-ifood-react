@@ -1,8 +1,21 @@
 import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 interface NavigationItemSty{
     type?: 'default' | 'primary'
 }
+
+const animate = keyframes`
+    0%{
+        width: 5px;
+    }
+
+    100%{
+        width: 1.5rem;
+        height: 3px;
+    }
+
+`
+
 export const NavigationItemSty = styled(NavLink)<NavigationItemSty>`
     cursor: pointer;
     display: flex;
@@ -15,8 +28,16 @@ export const NavigationItemSty = styled(NavLink)<NavigationItemSty>`
     transition: 0.5s;
     padding: 4px;
     background-color: ${prop=>prop.type ? prop.theme.primary : 'transparent'};
+    position: relative;
+    transition: 0.5s;
+    font-weight: bold;
+
     &.active{
-        background-color: red;
+        border-radius: 40% 2px;
+        border: 2px solid black;
+        background-color: ${prop=>prop.theme.secondary};
+       
+        
     }
 
     span{

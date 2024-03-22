@@ -13,9 +13,9 @@ export const Home = ()=>{
     return (
         <div>
             <Header.Root>
-                <Header.Empty />
                 <Header.Logo src="logo.png"/>
                 <Navigation.Root>
+                    <Navigation.Item to='' text="Home" />
                     {!user ? 
                         <Navigation.Item type="primary" to='login' >
                             <Icon icon={LoginIcon} size={18}/>
