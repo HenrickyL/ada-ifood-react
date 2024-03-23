@@ -19,9 +19,9 @@
       "password": "123456"
     },
     {
-      "id": "f807e237-ae33-4e91-a976-915124c6a38b",
-      "email": "Henricky@gmail.com",
-      "username": "Henricky",
+      "id": "16e5b066-ede5-4b38-aa7b-924ef49118dc",
+      "email": "henricky@gmail.com",
+      "username": "henricky",
       "password": "123456"
     }
   ],
@@ -81,7 +81,7 @@
       "category": "Acessórios",
       "stock": 70,
       "rating": 4.7,
-      "discount": 0.20,
+      "discount": 0.2,
       "installmentQuantity": 6,
       "interestFree": 0
     },

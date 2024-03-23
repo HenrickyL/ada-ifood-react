@@ -37,15 +37,6 @@ export const routes = createBrowserRouter([
         ]
     },
     {
-        path: 'route-private',
-        element: <PrivateRoute children={<h1>Test</h1>}/>
-    },
-    {
-        path: 'route-test',
-        element: <h1>route-test</h1>
-    },
-
-    {
         path: 'login',
         element:
            <Login />
