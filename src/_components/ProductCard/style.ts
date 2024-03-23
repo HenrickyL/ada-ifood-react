@@ -33,7 +33,7 @@ export const ProductCardCart = styled.div`
     color: ${prop=>prop.theme.contrast};
     font-size: 20px;
     bottom: 4px;
-    left: 4px;
+    left: 6px;
     transition: 0.5s;
     cursor: pointer;
     width: min-content;
@@ -47,7 +47,7 @@ export const ProductCardRating = styled.span`
     display: flex;
     gap:4px;
     align-items: center;
-    padding: 8px;
+    padding: 4px;
     svg{
         color: gold;
         filter: drop-shadow(0 0 0.2rem black); 
@@ -63,8 +63,7 @@ export const ProductCardContainer = styled(Link)`
     max-width: 16rem;
     text-decoration: none;
     color: unset;
-
-    gap: 8px;
+    gap: 4px;
     border-radius: 8px;
     border: 1px solid ${prop=>prop.theme.contrast};
     overflow: hidden;
@@ -79,7 +78,6 @@ export const ProductCardContainer = styled(Link)`
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 4px;
         padding: 8px;
         height: 100%;
     }

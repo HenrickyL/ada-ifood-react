@@ -5,10 +5,13 @@ export const ProductDetailsStyContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
     gap: 1rem;
     padding: 5rem 2rem;
     height: 100%;
+
+    @media (min-width: 100px) and (max-width: 400px){
+        padding: 5rem 2rem;
+    }
 `
 
 
@@ -17,6 +20,7 @@ export const ProductDetailsSty = styled.div`
     flex-direction: row;
     gap: 1rem;
     width: 100%;
+    justify-content: center;
     height: 100%;
     padding: 1rem;
     font-weight: bold;
@@ -32,5 +36,12 @@ export const ProductDetailsSty = styled.div`
 
     svg{
         cursor: pointer;
+    }
+
+    @media (min-width: 100px) and (max-width: 400px){
+        flex-wrap: wrap;
+        img{
+            width: 20rem;
+        }
     }
 `
