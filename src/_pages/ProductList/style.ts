@@ -20,23 +20,30 @@ export const ProductListSty = styled.div`
         justify-content: center;
         width: 100%;
         overflow-y: auto;
-        max-height: 34rem;
+        max-height: 10rem;
         flex-wrap: wrap;
         /* grid-template-columns: repeat(auto-fill, minmax(20%, 1fr)); */
         gap: 20px;
         padding: 1rem;
 
-        @media (max-width: 14in) {
+        /* Para telas de smartphone */
+        @media (min-height: 600px) {
             max-height: 34rem;
         }
 
-        @media (min-width: 14in) and (max-width: 22in) {
-            max-height: 50rem;
+        @media (min-height: 670px) and (max-height: 900px) {
+            max-height: 36rem;
         }
 
-        @media (min-width: 22in) {
-            max-height: 60rem;
+        /* Para telas de 14 polegadas */
+        @media (min-height: 900px) and (max-height: 1080px) {
+            max-height: 48rem;
         }
+
+
+        /* @media (min-height: 40in) {
+            max-height: 60rem;
+        } */
     }
     ${ProductListPaginationContainer}{
         display: flex;
